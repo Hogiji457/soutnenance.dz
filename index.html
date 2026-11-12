@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Soutenance DZ — Mémoires L3 &amp; Master en Algérie</title>
+<meta name="description" content="Partenaire académique premium pour vos mémoires L3 & Master en Algérie : transcription audio, anti-plagiat, mise en page et présentation de soutenance. Expertise humaine et confidentielle." />
+<meta property="og:title" content="Soutenance DZ — Mémoires L3 & Master en Algérie" />
+<meta property="og:description" content="Expertise académique humaine, confidentielle et précise pour vos mémoires L3 & Master." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Readex+Pro:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" />
+<style>
+/* ============ Design tokens — deep cosmic glassmorphism ============ */
+:root {
+  --font-sans: "Readex Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Syne", "Readex Pro", ui-sans-serif, sans-serif;
+  --font-mono: "JetBrains Mono", "Readex Pro", ui-monospace, monospace;
+
+  --background: oklch(0.095 0.02 300);          /* #05030a */
+  --foreground: oklch(0.965 0.012 300);
+  --muted-foreground: oklch(0.72 0.035 295);
+  --primary-foreground: oklch(0.99 0.005 300);
+  --secondary: oklch(0.2 0.04 295 / 0.6);
+  --destructive: oklch(0.65 0.22 22);
+  --neon: oklch(0.68 0.26 302);
+  --neon-blue: oklch(0.76 0.16 228);
+  --neon-pink: oklch(0.7 0.24 340);
+  --gold: oklch(0.84 0.14 82);
+  --gold-foreground: oklch(0.18 0.04 70);
+  --glass: oklch(0.15 0.035 295 / 0.45);
+  --glass-border: oklch(0.558 0.252 302 / 0.3);  /* rgba(147, 51, 234, 0.3) */
+  --whatsapp: oklch(0.74 0.17 152);
+
+  --gradient-neon: linear-gradient(120deg, var(--neon) 0%, var(--neon-blue) 100%);
+  --gradient-text: linear-gradient(100deg, oklch(0.97 0.01 300) 0%, oklch(0.82 0.14 302) 45%, var(--neon-blue) 100%);
+  --gradient-gold: linear-gradient(120deg, oklch(0.92 0.1 90) 0%, var(--gold) 45%, oklch(0.7 0.15 60) 100%);
+  --shadow-neon: 0 0 0 1px oklch(0.62 0.25 302 / 0.5), 0 10px 40px -8px oklch(0.62 0.25 302 / 0.65), 0 0 80px -20px oklch(0.76 0.16 228 / 0.6);
+  --shadow-gold: 0 0 0 1px oklch(0.84 0.14 82 / 0.55), 0 16px 60px -12px oklch(0.84 0.14 82 / 0.45);
+  --shadow-card: 0 20px 60px -30px oklch(0 0 0 / 0.9), inset 0 1px 0 oklch(1 0 0 / 0.06);
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border-color: var(--glass-border); }
+html { scroll-behavior: smooth; color-scheme: dark; }
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+::selection { background: oklch(0.62 0.25 302 / 0.45); }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; }
+ul { list-style: none; }
+svg.i { width: 1em; height: 1em; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+svg.wa { width: 1.25em; height: 1.25em; flex-shrink: 0; fill: currentColor; }
+
+.container { width: 100%; max-width: 72rem; margin-inline: auto; padding-inline: 1.25rem; }
+@media (min-width: 640px) { .container { padding-inline: 1.5rem; } }
+
+.font-display { font-family: var(--font-display); }
+.font-mono { font-family: var(--font-mono); }
+.muted { color: var(--muted-foreground); }
+.text-gradient { background: var(--gradient-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.text-gold { background: var(--gradient-gold); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.eyebrow { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.22em; color: var(--neon-blue); }
+
+/* Arabic script must stay connected: no decorative letter-spacing in RTL. */
+[dir="rtl"] .font-display, [dir="rtl"] .eyebrow, [dir="rtl"] .tracking { letter-spacing: 0 !important; }
+[dir="rtl"] h1 { line-height: 1.35 !important; }
+
+/* ============ Background ============ */
+.bg-layer { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+.cosmic-mesh {
+  position: absolute; inset: -10%;
+  background:
+    radial-gradient(40rem 30rem at 15% 10%, oklch(0.45 0.22 302 / 0.35), transparent 70%),
+    radial-gradient(35rem 28rem at 85% 20%, oklch(0.55 0.16 235 / 0.28), transparent 70%),
+    radial-gradient(45rem 35rem at 50% 85%, oklch(0.4 0.2 290 / 0.25), transparent 70%),
+    radial-gradient(30rem 25rem at 90% 75%, oklch(0.5 0.18 228 / 0.18), transparent 70%);
+  animation: mesh-drift 22s ease-in-out infinite alternate;
+}
+.grid-lines {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(oklch(1 0 0 / 0.035) 1px, transparent 1px), linear-gradient(90deg, oklch(1 0 0 / 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 30%, black 20%, transparent 75%);
+  mask-image: radial-gradient(ellipse at 50% 30%, black 20%, transparent 75%);
+}
+
+/* ============ Glass surfaces ============ */
+.glass { background: var(--glass); border: 1px solid var(--glass-border); backdrop-filter: blur(16px) saturate(140%); -webkit-backdrop-filter: blur(16px) saturate(140%); box-shadow: var(--shadow-card); }
+.glass-strong { background: oklch(0.13 0.035 295 / 0.72); border: 1px solid var(--glass-border); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%); box-shadow: var(--shadow-card); }
+
+/* Interactive card: pointer spotlight + tactile lift */
+.card { position: relative; isolation: isolate; border-radius: 1.75rem; transition: transform .35s var(--ease), box-shadow .35s ease, border-color .35s ease; }
+.card::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: -1; opacity: 0; transition: opacity .4s ease;
+  background: radial-gradient(22rem circle at var(--mx, 50%) var(--my, 50%), oklch(0.62 0.25 302 / 0.2), transparent 60%);
+}
+.card:hover { transform: translateY(-4px) scale(1.015); border-color: oklch(0.68 0.26 302 / 0.65); box-shadow: var(--shadow-neon); }
+.card:hover::before { opacity: 1; }
+.card:active { transform: scale(0.99); }
+
+/* Scroll reveal */
+.reveal { opacity: 0; transform: translateY(28px); filter: blur(6px); transition: opacity .9s var(--ease), transform .9s var(--ease), filter .9s ease; transition-delay: var(--d, 0ms); }
+.reveal.visible { opacity: 1; transform: none; filter: none; }
+
+/* ============ Buttons ============ */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; border-radius: 999px; white-space: nowrap; cursor: pointer; transition: all .3s ease; font-weight: 500; }
+.btn-xl { height: 3.5rem; padding-inline: 2rem; font-size: 1rem; }
+.btn-sm { height: 2.25rem; padding-inline: 1rem; font-size: .875rem; }
+.btn-md { height: 2.75rem; padding-inline: 1.25rem; font-size: .9rem; }
+.btn-neon { background: var(--gradient-neon); color: var(--primary-foreground); font-weight: 600; box-shadow: var(--shadow-neon); }
+.btn-neon:hover { transform: scale(1.04); filter: brightness(1.1); }
+.btn-glass { background: var(--glass); border: 1px solid var(--glass-border); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+.btn-glass:hover { transform: scale(1.03); border-color: oklch(0.68 0.26 302 / 0.7); box-shadow: var(--shadow-neon); }
+.btn-gold { background: var(--gradient-gold); color: var(--gold-foreground); font-weight: 600; box-shadow: var(--shadow-gold); }
+.btn-gold:hover { transform: scale(1.04); filter: brightness(1.1); }
+.btn:active { transform: scale(0.97); }
+.w-full { width: 100%; }
+
+/* ============ Header ============ */
+.header { position: fixed; inset-inline: 0; top: .75rem; z-index: 50; padding-inline: .75rem; }
+.header-inner { max-width: 72rem; margin-inline: auto; display: flex; align-items: center; justify-content: space-between; gap: .75rem; border-radius: 999px; padding: .625rem 1rem; transition: all .5s ease; }
+.header.scrolled .header-inner { background: oklch(0.13 0.035 295 / 0.72); box-shadow: var(--shadow-neon); }
+.brand { display: flex; align-items: center; gap: .5rem; font-family: var(--font-display); font-weight: 700; font-size: 1rem; letter-spacing: -0.01em; }
+.brand .cap { display: inline-block; transition: transform .3s ease; }
+.brand:hover .cap { transform: rotate(-12deg) scale(1.25); }
+.nav { display: none; gap: .25rem; }
+.nav a { border-radius: 999px; padding: .5rem 1rem; font-size: .875rem; color: var(--muted-foreground); transition: all .2s ease; }
+.nav a:hover { background: var(--secondary); color: var(--foreground); }
+@media (min-width: 640px) { .header { top: 1.25rem; padding-inline: 1.5rem; } .header-inner { padding-inline: 1.5rem; } .brand { font-size: 1.125rem; } }
+@media (min-width: 768px) { .nav { display: flex; } }
+
+.lang-switch { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); border-radius: 999px; border: 1px solid var(--glass-border); background: oklch(0.095 0.02 300 / 0.5); padding: .25rem; font-family: var(--font-mono); font-size: .75rem; font-weight: 600; }
+.lang-pill { position: absolute; top: .25rem; bottom: .25rem; left: .25rem; width: calc((100% - .5rem) / 3); border-radius: 999px; background: var(--gradient-neon); box-shadow: var(--shadow-neon); transition: transform .5s var(--ease); }
+.lang-switch button { position: relative; z-index: 1; width: 2.75rem; padding-block: .375rem; border-radius: 999px; text-transform: uppercase; cursor: pointer; color: var(--muted-foreground); transition: color .3s ease; }
+.lang-switch button:hover { color: var(--foreground); }
+.lang-switch button[aria-pressed="true"] { color: var(--primary-foreground); }
+
+/* ============ Hero ============ */
+.hero { position: relative; display: flex; align-items: center; min-height: 100svh; padding-top: 7rem; padding-bottom: 4rem; }
+.hero-grid { display: grid; align-items: center; gap: 1.5rem; }
+.hero-text { text-align: center; }
+.pill-eyebrow { display: inline-flex; align-items: center; gap: .5rem; border-radius: 999px; padding: .375rem 1rem; font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted-foreground); }
+.ping { position: relative; display: flex; width: .5rem; height: .5rem; }
+.ping::before, .ping::after { content: ""; position: absolute; inset: 0; border-radius: 999px; background: var(--neon-blue); }
+.ping::before { animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite; opacity: .7; }
+h1 { margin-top: 1.5rem; font-family: var(--font-display); font-size: 2.15rem; font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; }
+.hero-sub { max-width: 36rem; margin: 1.5rem auto 0; font-size: 1rem; line-height: 1.7; color: var(--muted-foreground); }
+.hero-ctas { margin-top: 2.25rem; display: flex; flex-direction: column; align-items: center; gap: .75rem; }
+.hero-ctas .btn { width: 100%; }
+.badges { margin-top: 2rem; display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.25rem; font-size: .875rem; color: var(--muted-foreground); }
+.badges li { display: flex; align-items: center; gap: .375rem; }
+.badges svg { color: var(--neon-blue); font-size: 1rem; }
+.orb-col { position: relative; margin-inline: auto; width: 100%; max-width: 340px; }
+.float-tag { position: absolute; display: none; border-radius: 1rem; padding: .625rem 1rem; font-size: .75rem; animation: float 7s ease-in-out infinite; }
+.float-tag.t1 { inset-inline-start: 0; top: 14%; }
+.float-tag.t2 { inset-inline-end: 0; bottom: 12%; animation-delay: -3.5s; }
+@media (min-width: 640px) {
+  .pill-eyebrow { font-size: .75rem; letter-spacing: .18em; }
+  h1 { font-size: 3rem; }
+  .hero-sub { font-size: 1.125rem; }
+  .hero-ctas { flex-direction: row; justify-content: center; }
+  .hero-ctas .btn { width: auto; }
+  .orb-col { max-width: 460px; }
+  .float-tag { display: block; }
+  .hero { padding-top: 8rem; }
+}
+@media (min-width: 1024px) {
+  .hero-grid { grid-template-columns: 1.1fr .9fr; gap: 2.5rem; }
+  .hero-text { text-align: start; }
+  .hero-sub { margin-inline: 0; }
+  .hero-ctas, .badges { justify-content: flex-start; }
+  h1 { font-size: 3.6rem; }
+  .orb-col { max-width: 560px; }
+}
+
+/* Energy orb */
+.orb { position: relative; aspect-ratio: 1; width: 100%; }
+.orb > * { position: absolute; border-radius: 999px; }
+.orb .core { inset: 28%; background: var(--gradient-neon); opacity: .7; filter: blur(64px); animation: pulse-glow 4.5s ease-in-out infinite; }
+.orb .core2 { inset: 38%; background: oklch(0.76 0.16 228 / 0.4); filter: blur(40px); animation: float 7s ease-in-out infinite; }
+.orb .halo { inset: 12%; border: 1px solid oklch(0.68 0.26 302 / 0.2); animation: spin 24s linear infinite; }
+.orb .halo span { position: absolute; top: -4px; left: 50%; width: .5rem; height: .5rem; transform: translateX(-50%); border-radius: 999px; background: var(--neon-blue); box-shadow: var(--shadow-neon); }
+.orb .dash { inset: 4%; border: 1px dashed oklch(0.76 0.16 228 / 0.1); }
+.orb canvas { inset: 0; border-radius: 0; }
+
+/* ============ Sections ============ */
+section.block { position: relative; scroll-margin-top: 7rem; padding-block: 5rem; }
+@media (min-width: 640px) { section.block { padding-block: 7rem; } }
+.h2 { font-family: var(--font-display); font-size: 1.875rem; font-weight: 700; line-height: 1.2; }
+@media (min-width: 640px) { .h2 { font-size: 2.25rem; } }
+@media (min-width: 1024px) { .h2 { font-size: 3rem; } }
+.center { text-align: center; margin-inline: auto; }
+
+.why-grid { margin-top: 3rem; display: grid; gap: 1rem; }
+@media (min-width: 640px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .why-grid { grid-template-columns: repeat(4, 1fr); } }
+.why-card { height: 100%; padding: 1.5rem; }
+.icon-box { display: flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: 1rem; border: 1px solid var(--glass-border); background: oklch(0.68 0.26 302 / 0.1); color: var(--neon-blue); font-size: 1.5rem; }
+.icon-box.solid { border: 0; background: var(--gradient-neon); color: var(--primary-foreground); box-shadow: var(--shadow-neon); flex-shrink: 0; }
+.card h3 { margin-top: 1.25rem; font-family: var(--font-display); font-size: 1.125rem; font-weight: 600; }
+.card p.desc { margin-top: .5rem; font-size: .875rem; line-height: 1.65; color: var(--muted-foreground); }
+
+/* Trial */
+.trial-box { position: relative; overflow: hidden; border-radius: 2rem; padding: 1.5rem; }
+.blob { position: absolute; width: 20rem; height: 20rem; border-radius: 999px; filter: blur(64px); }
+.blob.b1 { top: -8rem; inset-inline-end: -6rem; background: oklch(0.68 0.26 302 / 0.3); }
+.blob.b2 { bottom: -8rem; inset-inline-start: -6rem; background: oklch(0.76 0.16 228 / 0.2); }
+.trial-grid { position: relative; display: grid; align-items: center; gap: 2.5rem; }
+.trial-text { text-align: center; }
+.chip { display: inline-flex; align-items: center; gap: .5rem; border-radius: 999px; border: 1px solid oklch(0.76 0.16 228 / 0.4); background: oklch(0.76 0.16 228 / 0.1); padding: .25rem .75rem; font-family: var(--font-mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .18em; color: var(--neon-blue); }
+.trial-text .h2 { margin-top: 1.25rem; }
+.trial-text p.sub { margin-top: 1rem; color: var(--muted-foreground); }
+.trial-text p.note { margin-top: 1.5rem; font-family: var(--font-mono); font-size: .75rem; color: var(--muted-foreground); }
+.trial-cards { display: grid; gap: 1rem; }
+.trial-card { display: flex; flex-direction: column; height: 100%; padding: 1.5rem; }
+.trial-card .lbl { display: flex; align-items: center; gap: .5rem; font-size: .875rem; color: var(--muted-foreground); }
+.trial-card .lbl svg { color: var(--neon); }
+.trial-card .big { margin-top: 1rem; display: flex; align-items: baseline; gap: .75rem; }
+.trial-card .num { font-family: var(--font-display); font-size: 4.5rem; font-weight: 700; line-height: 1; }
+.trial-card .free { font-family: var(--font-display); font-size: 1.125rem; font-weight: 600; }
+.trial-card .btn { margin-top: 1.5rem; }
+@media (min-width: 640px) { .trial-box { padding: 2.5rem; } .trial-cards { grid-template-columns: repeat(2, 1fr); } .trial-text p.sub { font-size: 1.125rem; } }
+@media (min-width: 1024px) { .trial-box { padding: 3.5rem; } .trial-grid { grid-template-columns: 1fr 1.15fr; } .trial-text { text-align: start; } }
+
+/* Services */
+.services-head { max-width: 42rem; }
+.services-head .h2 { margin-top: 1rem; }
+.services-head p { margin-top: 1rem; color: var(--muted-foreground); }
+@media (min-width: 640px) { .services-head p { font-size: 1.125rem; } }
+.svc-grid { margin-top: 3.5rem; display: grid; gap: 1.25rem; }
+@media (min-width: 768px) {
+  .svc-grid { grid-template-columns: repeat(2, 1fr); }
+  .svc-grid .tall { grid-row: span 2; }
+  .svc-grid .wide { grid-column: span 2; }
+}
+.svc-grid > .reveal { height: 100%; }
+.svc-card { display: flex; flex-direction: column; height: 100%; padding: 1.5rem; }
+@media (min-width: 640px) { .svc-card { padding: 2rem; } .svc-card h3 { font-size: 1.5rem !important; } .svc-card p.desc { font-size: 1rem !important; } }
+.svc-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.svc-card h3 { font-size: 1.25rem !important; margin-top: 1.5rem !important; }
+.svc-bottom { margin-top: auto; }
+.price { margin-top: 1.5rem; font-family: var(--font-display); font-size: 1.875rem; font-weight: 700; letter-spacing: -0.02em; }
+.price .unit { font-size: 1rem; font-weight: 500; color: var(--muted-foreground); -webkit-text-fill-color: var(--muted-foreground); }
+.crit { margin-top: .25rem; font-size: .875rem; color: var(--neon-blue); }
+.tiers { margin-top: 1.5rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: .625rem; }
+@media (min-width: 640px) { .tiers { grid-template-columns: repeat(3, 1fr); } }
+.tier { border-radius: 1rem; border: 1px solid var(--glass-border); background: oklch(0.095 0.02 300 / 0.4); padding: .75rem; text-align: center; transition: all .3s ease; }
+.tier:hover { transform: translateY(-2px); border-color: oklch(0.76 0.16 228 / 0.6); background: oklch(0.76 0.16 228 / 0.1); }
+.tier .d { font-family: var(--font-mono); font-size: .75rem; color: var(--muted-foreground); }
+.tier .p { margin-top: .25rem; font-family: var(--font-display); font-size: 1.125rem; font-weight: 700; }
+
+/* Golden bundle */
+.bundle-wrap { margin-top: 1.25rem; }
+.bundle { position: relative; border-radius: 2rem; background: var(--gradient-gold); padding: 1px; box-shadow: var(--shadow-gold); transition: transform .5s ease; }
+.bundle:hover { transform: scale(1.01); }
+.bundle:active { transform: scale(0.99); }
+.bundle-inner { position: relative; overflow: hidden; border-radius: calc(2rem - 1px); padding: 1.5rem; }
+.bundle-inner .glow { position: absolute; top: -6rem; inset-inline-end: 0; width: 18rem; height: 18rem; border-radius: 999px; background: oklch(0.84 0.14 82 / 0.2); filter: blur(64px); }
+.bundle-grid { position: relative; display: grid; align-items: center; gap: 2rem; }
+.gold-badge { display: inline-flex; align-items: center; gap: .5rem; border-radius: 999px; background: var(--gradient-gold); padding: .25rem .75rem; font-family: var(--font-mono); font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .16em; color: var(--gold-foreground); }
+.bundle h3 { margin-top: 1.25rem; font-family: var(--font-display); font-size: 1.875rem; font-weight: 700; }
+.bundle .tagline { margin-top: .5rem; font-family: var(--font-display); font-size: 1.125rem; color: oklch(0.965 0.012 300 / 0.9); }
+.bundle .bdesc { margin-top: .75rem; color: var(--muted-foreground); }
+.includes { margin-top: 1.5rem; display: grid; gap: .625rem; }
+.includes li { display: flex; align-items: center; gap: .5rem; font-size: .875rem; }
+.includes .tick { display: flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 999px; background: oklch(0.84 0.14 82 / 0.15); color: var(--gold); font-size: .875rem; flex-shrink: 0; }
+.bundle-price { border-radius: 1.5rem; border: 1px solid oklch(0.84 0.14 82 / 0.3); background: oklch(0.095 0.02 300 / 0.4); padding: 1.5rem; text-align: center; }
+.save { display: inline-flex; align-items: center; gap: .375rem; border-radius: 999px; border: 1px solid oklch(0.84 0.14 82 / 0.4); padding: .25rem .75rem; font-size: .75rem; color: var(--gold); }
+.bundle-price .amount { margin-top: 1rem; white-space: nowrap; font-family: var(--font-display); font-size: 3rem; font-weight: 700; line-height: 1; }
+.bundle-price .btn { margin-top: 1.5rem; }
+@media (min-width: 640px) { .bundle-inner { padding: 2.5rem; } .bundle h3 { font-size: 2.25rem; } .includes { grid-template-columns: repeat(3, 1fr); } .bundle-price .amount { font-size: 3.75rem; } }
+@media (min-width: 1024px) { .bundle-grid { grid-template-columns: 1.3fr 1fr; } }
+
+/* ============ Footer ============ */
+footer { position: relative; scroll-margin-top: 7rem; padding-top: 5rem; padding-bottom: 7rem; }
+@media (min-width: 640px) { footer { padding-top: 7rem; padding-bottom: 3rem; } }
+.cta-box { position: relative; overflow: hidden; border-radius: 2rem; border: 1px solid var(--glass-border); padding: 2rem; text-align: center; }
+.cta-box .wash { position: absolute; inset: 0; background: var(--gradient-neon); opacity: .15; }
+.cta-box .line { position: absolute; top: 0; left: 50%; height: 1px; width: 66%; transform: translateX(-50%); background: var(--gradient-neon); }
+.cta-box h2 { position: relative; font-family: var(--font-display); font-size: 1.875rem; font-weight: 700; line-height: 1.2; }
+.cta-box p { position: relative; max-width: 36rem; margin: 1rem auto 0; color: var(--muted-foreground); }
+.cta-box .btn { position: relative; margin-top: 2rem; }
+@media (min-width: 640px) { .cta-box { padding: 3.5rem; } .cta-box h2 { font-size: 3rem; } .cta-box p { font-size: 1.125rem; } }
+.foot-grid { margin-top: 3.5rem; display: grid; gap: 2.5rem; border-top: 1px solid var(--glass-border); padding-top: 3rem; }
+@media (min-width: 768px) { .foot-grid { grid-template-columns: repeat(3, 1fr); } }
+.foot-brand { display: flex; align-items: center; gap: .5rem; font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; }
+.foot-grid .small { margin-top: .75rem; max-width: 20rem; font-size: .875rem; color: var(--muted-foreground); }
+.foot-title { font-family: var(--font-mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .18em; color: var(--muted-foreground); }
+.pay-list { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: .625rem; }
+.pay { display: inline-flex; align-items: center; gap: .5rem; border-radius: 999px; padding: .5rem 1rem; font-size: .875rem; font-weight: 600; }
+.pay svg { color: var(--neon-blue); }
+.pay-note { margin-top: .75rem; display: flex; align-items: center; gap: .5rem; font-size: .75rem; color: var(--muted-foreground); }
+.pay-note svg { color: var(--destructive); }
+.wa-link { margin-top: 1rem; display: inline-flex; align-items: center; gap: .75rem; }
+.wa-link .circle { display: flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; border-radius: 999px; background: oklch(0.74 0.17 152 / 0.15); color: var(--whatsapp); transition: all .3s ease; }
+.wa-link:hover .circle { transform: scale(1.1); background: var(--whatsapp); color: var(--background); }
+.wa-link .num { font-family: var(--font-display); font-size: 1.125rem; font-weight: 600; }
+.rights { margin-top: 3rem; text-align: center; font-size: .75rem; color: var(--muted-foreground); }
+
+.fab { position: fixed; bottom: 1.25rem; inset-inline-end: 1.25rem; z-index: 40; display: flex; align-items: center; justify-content: center; width: 3.5rem; height: 3.5rem; border-radius: 999px; background: var(--whatsapp); color: var(--background); box-shadow: var(--shadow-neon); transition: transform .3s ease; }
+.fab:hover { transform: scale(1.1); }
+.fab:active { transform: scale(0.95); }
+.fab::before { content: ""; position: absolute; inset: 0; border-radius: 999px; background: var(--whatsapp); opacity: .3; animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite; }
+.fab svg { position: relative; width: 1.75rem; height: 1.75rem; }
+
+.lang-swap { animation: lang-swap .5s var(--ease); }
+
+/* ============ Keyframes ============ */
+@keyframes mesh-drift { 0% { transform: translate3d(0,0,0) scale(1); } 100% { transform: translate3d(-2%,3%,0) scale(1.08); } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+@keyframes pulse-glow { 0%,100% { opacity: .55; transform: scale(1); } 50% { opacity: .9; transform: scale(1.08); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes ping { 75%,100% { transform: scale(2); opacity: 0; } }
+@keyframes lang-swap { 0% { opacity: 0; transform: translateY(8px); filter: blur(4px); } 100% { opacity: 1; transform: none; filter: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .reveal { opacity: 1; transform: none; filter: none; }
+}
+</style>
+</head>
+<body>
+<div class="bg-layer" aria-hidden="true"><div class="cosmic-mesh"></div><div class="grid-lines"></div></div>
+
+<header class="header" id="header">
+  <div class="header-inner glass">
+    <a href="#top" class="brand" dir="ltr"><span>Soutenance</span><span class="text-gradient">DZ</span><span class="cap">🎓</span></a>
+    <nav class="nav" id="nav"></nav>
+    <div class="lang-switch" dir="ltr" role="group" aria-label="Language" id="lang-switch">
+      <span class="lang-pill" id="lang-pill" aria-hidden="true"></span>
+      <button type="button" data-lang="ar">ar</button>
+      <button type="button" data-lang="fr">fr</button>
+      <button type="button" data-lang="en">en</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="top" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text" id="hero-text"></div>
+      <div class="orb-col">
+        <div class="orb" id="orb" aria-hidden="true">
+          <div class="core"></div>
+          <div class="core2"></div>
+          <div class="halo"><span></span></div>
+          <div class="dash"></div>
+          <canvas id="orb-canvas"></canvas>
+        </div>
+        <div class="float-tag t1 glass"><span class="font-mono" style="color:var(--neon-blue)">✓</span> <span id="tag1"></span></div>
+        <div class="float-tag t2 glass"><span class="font-mono" style="color:var(--neon)">●</span> <span id="tag2"></span></div>
+      </div>
+    </div>
+  </section>
+  <div id="sections"></div>
+</main>
+<div id="footer"></div>
+<a class="fab" id="fab" target="_blank" rel="noopener noreferrer"></a>
+
+<script>
+/* ===================== Prices, trials & payment (single source of truth) ===================== */
+const WHATSAPP_NUMBER = "213669449311";
+const WHATSAPP_DISPLAY = "+213 669 44 93 11";
+const FREE_TRIALS = [{ audioMinutes: 5, freeTrials: 3 }, { audioMinutes: 10, freeTrials: 2 }];
+const TRANSCRIPTION_TIERS = [
+  { minutes: 15, price: 100 }, { minutes: 30, price: 150 }, { minutes: 60, price: 250 },
+  { minutes: 120, price: 450 }, { minutes: 180, price: 750 }, { minutes: 240, price: 1000 },
+];
+const PRICING = {
+  antiPlagiatPerPage: { min: 100, max: 150 },
+  antiPlagiatCriticalChapter: 2000,
+  formatting: { min: 1000, max: 1500 },
+  presentation: { min: 1500, max: 2000 },
+  bundle: 2500,
+};
+const BUNDLE_MAX_SAVING = PRICING.formatting.max + PRICING.presentation.max - PRICING.bundle;
+const PAYMENT_METHODS = ["BaridiMob", "CCP"];
+
+const whatsappLink = (msg) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+
+/* ===================== Copy: FR / EN / AR ===================== */
+const DICT = {
+  fr: {
+    currency: "DZD",
+    nav: { why: "Pourquoi nous", trial: "Essai gratuit", services: "Tarifs", contact: "Contact" },
+    hero: {
+      eyebrow: "Accompagnement académique · Algérie",
+      titleA: "Le partenaire académique premium de vos mémoires", titleHighlight: "L3 & Master", titleB: "en Algérie.",
+      sub: "Une expertise académique humaine et précise, une mise en forme rigoureuse et un vrai accompagnement jusqu'à votre soutenance.",
+      cta: "Demander via WhatsApp", secondary: "Voir les tarifs",
+      badges: ["Expertise 100 % humaine", "Confidentialité totale", "L3 & Master"],
+    },
+    why: {
+      title: "L'exigence d'un jury, la bienveillance d'un mentor.",
+      items: [
+        { title: "Expertise humaine", desc: "Des universitaires expérimentés relisent et travaillent chaque page." },
+        { title: "Précision absolue", desc: "Normes, citations et structure vérifiées ligne par ligne." },
+        { title: "Confidentialité", desc: "Vos documents restent strictement privés, jamais partagés." },
+        { title: "Soutien réel", desc: "Un accompagnement concret jusqu'au jour de votre soutenance." },
+      ],
+    },
+    trial: {
+      eyebrow: "Zéro risque", title: "Testez avant de vous engager.",
+      sub: "Envoyez-nous un extrait audio et jugez la qualité de notre transcription — gratuitement.",
+      audioLabel: (m) => `Audio de ${m} minutes`, freeLabel: "essais GRATUITS", cta: "Réclamer mon essai",
+      note: "Sans engagement · Réponse rapide sur WhatsApp",
+    },
+    services: {
+      eyebrow: "Services & tarifs", title: "Des prix transparents, pensés pour les étudiants.",
+      sub: "Aucun frais caché. Vous savez exactement ce que vous payez avant de commencer.",
+      perPage: "/ page", criticalChapter: "ou 2000 DZD par chapitre critique",
+      duration: (m) => (m < 60 ? `${m} min` : `${m / 60} h`),
+      items: {
+        transcription: { title: "Transcription audio", desc: "Retranscription fidèle, mot pour mot, de vos entretiens, cours et enregistrements.", cta: "Commander" },
+        antiPlagiat: { title: "Anti-plagiat & reformulation", desc: "Reformulation académique minutieuse pour un taux de similarité maîtrisé.", cta: "Commander" },
+        formatting: { title: "Mise en page académique", desc: "Normes universitaires, sommaire, numérotation et bibliographie : un document impeccable.", cta: "Commander" },
+        presentation: { title: "Présentation de soutenance", desc: "Des diapositives PowerPoint claires et élégantes pour convaincre votre jury.", cta: "Commander" },
+      },
+    },
+    bundle: {
+      badge: "Offre vedette", tagline: "Le choix le plus malin pour votre soutenance.",
+      desc: "Mise en page complète + présentation de soutenance, réunies en un seul pack.",
+      includes: ["Mise en page académique complète", "Présentation PowerPoint de soutenance", "Suivi personnalisé"],
+      save: (a) => `Économisez jusqu'à ${a}`, cta: "Je prends le pack",
+    },
+    footer: {
+      ctaTitle: "Votre soutenance mérite l'excellence.", ctaSub: "Écrivez-nous maintenant, un expert vous répond personnellement.",
+      paymentTitle: "Moyens de paiement acceptés", paymentNote: "Uniquement BaridiMob & CCP — Flexy non accepté.",
+      supportTitle: "Support WhatsApp direct", supportDesc: "Une question ? Un expert vous répond.",
+      tagline: "Expertise académique humaine, confidentielle et précise.", rights: "Tous droits réservés.",
+    },
+    wa: {
+      general: "Bonjour Soutenance DZ 👋 Je souhaite des informations sur votre accompagnement pour mon mémoire (L3 / Master).",
+      trial: (m) => `Bonjour Soutenance DZ 👋 Je souhaite profiter de l'essai gratuit de transcription pour un audio de ${m} minutes.`,
+      service: (n) => `Bonjour Soutenance DZ 👋 Je suis intéressé(e) par le service « ${n} ». Pouvez-vous me donner plus de détails ?`,
+      bundle: "Bonjour Soutenance DZ 👋 Je souhaite commander le Pack Étudiant Malin (mise en page + présentation de soutenance) à 2500 DZD.",
+    },
+  },
+  en: {
+    currency: "DZD",
+    nav: { why: "Why us", trial: "Free trial", services: "Pricing", contact: "Contact" },
+    hero: {
+      eyebrow: "Academic support · Algeria",
+      titleA: "The premium academic partner for graduation theses", titleHighlight: "L3 & Master", titleB: "in Algeria.",
+      sub: "Precise human academic expertise, rigorous formatting, and real support all the way to your defense.",
+      cta: "Request via WhatsApp", secondary: "View pricing",
+      badges: ["100% human expertise", "Fully confidential", "L3 & Master"],
+    },
+    why: {
+      title: "The rigor of a jury, the care of a mentor.",
+      items: [
+        { title: "Human expertise", desc: "Experienced academics review and work on every single page." },
+        { title: "Absolute precision", desc: "Standards, citations and structure checked line by line." },
+        { title: "Confidential", desc: "Your documents stay strictly private, never shared." },
+        { title: "Real support", desc: "Hands-on guidance right up to your defense day." },
+      ],
+    },
+    trial: {
+      eyebrow: "Risk-free", title: "Try before you commit.",
+      sub: "Send us an audio excerpt and judge the quality of our transcription — for free.",
+      audioLabel: (m) => `${m}-minute audio`, freeLabel: "FREE trials", cta: "Claim my trial",
+      note: "No commitment · Fast reply on WhatsApp",
+    },
+    services: {
+      eyebrow: "Services & pricing", title: "Transparent prices, built for students.",
+      sub: "No hidden fees. You know exactly what you pay before we start.",
+      perPage: "/ page", criticalChapter: "or 2000 DZD per critical chapter",
+      duration: (m) => (m < 60 ? `${m} min` : m === 60 ? "1 hr" : `${m / 60} hrs`),
+      items: {
+        transcription: { title: "Audio transcription", desc: "Faithful, word-for-word transcription of your interviews, lectures and recordings.", cta: "Order" },
+        antiPlagiat: { title: "Anti-plagiarism & rewording", desc: "Careful academic rewording to keep your similarity score under control.", cta: "Order" },
+        formatting: { title: "Academic formatting", desc: "University standards, table of contents, numbering and bibliography — flawless.", cta: "Order" },
+        presentation: { title: "Defense presentation", desc: "Clear, elegant PowerPoint slides designed to convince your jury.", cta: "Order" },
+      },
+    },
+    bundle: {
+      badge: "Featured offer", tagline: "The smartest choice for your defense.",
+      desc: "Full formatting + defense presentation, together in one pack.",
+      includes: ["Complete academic formatting", "PowerPoint defense presentation", "Personal follow-up"],
+      save: (a) => `Save up to ${a}`, cta: "Get the pack",
+    },
+    footer: {
+      ctaTitle: "Your defense deserves excellence.", ctaSub: "Message us now — an expert replies to you personally.",
+      paymentTitle: "Accepted payment methods", paymentNote: "BaridiMob & CCP only — Flexy is not accepted.",
+      supportTitle: "Direct WhatsApp support", supportDesc: "A question? An expert answers you.",
+      tagline: "Human, confidential and precise academic expertise.", rights: "All rights reserved.",
+    },
+    wa: {
+      general: "Hello Soutenance DZ 👋 I'd like information about your support for my graduation thesis (L3 / Master).",
+      trial: (m) => `Hello Soutenance DZ 👋 I'd like to use the free transcription trial for a ${m}-minute audio.`,
+      service: (n) => `Hello Soutenance DZ 👋 I'm interested in your "${n}" service. Could you tell me more?`,
+      bundle: "Hello Soutenance DZ 👋 I'd like to order the Pack Étudiant Malin (formatting + defense presentation) for 2500 DZD.",
+    },
+  },
+  ar: {
+    currency: "دج",
+    nav: { why: "لماذا نحن", trial: "تجربة مجانية", services: "الأسعار", contact: "تواصل" },
+    hero: {
+      eyebrow: "مرافقة أكاديمية · الجزائر",
+      titleA: "شريكك الأكاديمي المتميّز لمذكرات التخرج", titleHighlight: "ليسانس وماستر", titleB: "في الجزائر.",
+      sub: "خبرة أكاديمية بشرية دقيقة، تنسيق صارم وفق المعايير الجامعية، ومرافقة حقيقية حتى يوم المناقشة.",
+      cta: "اطلب عبر واتساب", secondary: "اطّلع على الأسعار",
+      badges: ["خبرة بشرية 100%", "سرية تامة", "ليسانس وماستر"],
+    },
+    why: {
+      title: "صرامة لجنة المناقشة، وعناية المرشد.",
+      items: [
+        { title: "خبرة بشرية", desc: "أكاديميون ذوو خبرة يراجعون ويعملون على كل صفحة." },
+        { title: "دقة مطلقة", desc: "المعايير والاقتباسات والهيكلة مُدقّقة سطرًا بسطر." },
+        { title: "سرية تامة", desc: "وثائقك تبقى خاصة تمامًا ولا تُشارك أبدًا." },
+        { title: "مرافقة حقيقية", desc: "دعم فعلي وملموس حتى يوم مناقشتك." },
+      ],
+    },
+    trial: {
+      eyebrow: "بدون مخاطرة", title: "جرّب قبل أن تلتزم.",
+      sub: "أرسل لنا مقطعًا صوتيًا واحكم بنفسك على جودة التفريغ — مجانًا.",
+      audioLabel: (m) => `تسجيل صوتي ${m} دقائق`, freeLabel: "تجارب مجانية", cta: "احصل على تجربتي",
+      note: "بدون التزام · رد سريع عبر واتساب",
+    },
+    services: {
+      eyebrow: "الخدمات والأسعار", title: "أسعار شفافة، مصممة للطلبة.",
+      sub: "لا رسوم خفية. تعرف بالضبط ما تدفعه قبل أن نبدأ.",
+      perPage: "/ للصفحة", criticalChapter: "أو 2000 دج للفصل الحساس",
+      duration: (m) => { if (m < 60) return `${m} دقيقة`; const h = m / 60; if (h === 1) return "ساعة"; if (h === 2) return "ساعتان"; return `${h} ساعات`; },
+      items: {
+        transcription: { title: "تفريغ التسجيلات الصوتية", desc: "تفريغ أمين كلمة بكلمة لمقابلاتك ومحاضراتك وتسجيلاتك.", cta: "اطلب الآن" },
+        antiPlagiat: { title: "مكافحة الانتحال وإعادة الصياغة", desc: "إعادة صياغة أكاديمية متقنة لضبط نسبة التشابه.", cta: "اطلب الآن" },
+        formatting: { title: "التنسيق الأكاديمي للمذكرة", desc: "المعايير الجامعية، الفهرس، الترقيم والمراجع: وثيقة متقنة.", cta: "اطلب الآن" },
+        presentation: { title: "العرض التقديمي للمناقشة", desc: "شرائح PowerPoint واضحة وأنيقة لإقناع لجنة المناقشة.", cta: "اطلب الآن" },
+      },
+    },
+    bundle: {
+      badge: "العرض المميّز", tagline: "باقة الطالب الذكي — الخيار الأذكى لمناقشتك.",
+      desc: "تنسيق كامل + عرض تقديمي للمناقشة، في باقة واحدة.",
+      includes: ["تنسيق أكاديمي كامل", "عرض PowerPoint للمناقشة", "متابعة شخصية"],
+      save: (a) => `وفّر حتى ${a}`, cta: "أريد الباقة",
+    },
+    footer: {
+      ctaTitle: "مناقشتك تستحق التميّز.", ctaSub: "راسلنا الآن، خبير يرد عليك شخصيًا.",
+      paymentTitle: "طرق الدفع المقبولة", paymentNote: "BaridiMob و CCP فقط — لا نقبل الدفع عبر Flexy.",
+      supportTitle: "دعم مباشر عبر واتساب", supportDesc: "لديك سؤال؟ خبير يجيبك.",
+      tagline: "خبرة أكاديمية بشرية، سرية ودقيقة.", rights: "جميع الحقوق محفوظة.",
+    },
+    wa: {
+      general: "السلام عليكم Soutenance DZ 👋 أرغب في معلومات حول مرافقتكم لمذكرة تخرجي (ليسانس / ماستر).",
+      trial: (m) => `السلام عليكم Soutenance DZ 👋 أرغب في الاستفادة من التجربة المجانية لتفريغ تسجيل صوتي مدته ${m} دقائق.`,
+      service: (n) => `السلام عليكم Soutenance DZ 👋 أنا مهتم(ة) بخدمة «${n}». هل يمكنكم تزويدي بمزيد من التفاصيل؟`,
+      bundle: "السلام عليكم Soutenance DZ 👋 أرغب في طلب باقة الطالب الذكي (تنسيق + عرض المناقشة) بسعر 2500 دج.",
+    },
+  },
+};
+
+const LANGS = ["ar", "fr", "en"];
+const DEFAULT_LANG = "fr";
+const STORAGE_KEY = "soutenance-dz-lang";
+
+function formatPrice(value, lang) {
+  const locale = lang === "ar" ? "ar-DZ-u-nu-latn" : lang === "fr" ? "fr-FR" : "en-US";
+  return `${new Intl.NumberFormat(locale).format(value)} ${DICT[lang].currency}`;
+}
+const range = (min, max, t) => `${min} – ${max} ${t.currency}`;
+
+/* ===================== Icons ===================== */
+const svg = (inner) => `<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${inner}</svg>`;
+const ICON = {
+  check: svg('<path d="M20 6 9 17l-5-5"/>'),
+  arrowDown: svg('<path d="M12 5v14"/><path d="m19 12-7 7-7-7"/>'),
+  userCheck: svg('<path d="M2 21a8 8 0 0 1 13.292-6"/><circle cx="10" cy="8" r="5"/><path d="m16 19 2 2 4-4"/>'),
+  crosshair: svg('<circle cx="12" cy="12" r="10"/><path d="M22 12h-4M6 12H2M12 6V2M12 22v-4"/>'),
+  lock: svg('<circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/>'),
+  cap: svg('<path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>'),
+  gift: svg('<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/>'),
+  audio: svg('<path d="M2 10v3M6 6v11M10 3v18M14 8v7M18 5v13M22 10v3"/>'),
+  fileCheck: svg('<path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m3 15 2 2 4-4"/>'),
+  layout: svg('<rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/>'),
+  presentation: svg('<path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/>'),
+  crown: svg('<path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"/><path d="M5 21h14"/>'),
+  sparkles: svg('<path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>'),
+  phone: svg('<rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/>'),
+  bank: svg('<path d="M3 22h18M6 18v-7M10 18v-7M14 18v-7M18 18v-7"/><path d="M12 2 20 7H4z"/>'),
+  ban: svg('<circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/>'),
+};
+const WA_ICON = '<svg class="wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.380-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.27.49 1.7.63.72.23 1.370.2 1.88.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.43 9.430 0 0 1-1.45-5.02c0-5.2 4.24-9.44 9.45-9.44 2.52 0 4.9.99 6.68 2.77a9.38 9.38 0 0 1 2.76 6.68c0 5.21-4.24 9.44-9.45 9.44m8.04-17.48A11.3 11.3 0 0 0 12.05.7C5.78.7.68 5.8.68 12.06c0 2 .52 3.96 1.52 5.69L.58 23.640l6.03-1.58a11.33 11.33 0 0 0 5.43 1.38h.01c6.26 0 11.37-5.1 11.37-11.37 0-3.04-1.18-5.89-3.33-8.04"/></svg>';
+
+const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const waA = (msg, cls, inner) => `<a class="${cls}" href="${esc(whatsappLink(msg))}" target="_blank" rel="noopener noreferrer">${inner}</a>`;
+const reveal = (inner, delay = 0, cls = "") => `<div class="reveal ${cls}" style="--d:${delay}ms">${inner}</div>`;
+
+/* ===================== Render ===================== */
+function renderNav(t) {
+  document.getElementById("nav").innerHTML = [
+    ["#why", t.nav.why], ["#trial", t.nav.trial], ["#services", t.nav.services], ["#contact", t.nav.contact],
+  ].map(([h, l]) => `<a href="${h}">${esc(l)}</a>`).join("");
+}
+
+function renderHero(t) {
+  const h = t.hero;
+  const el = document.getElementById("hero-text");
+  el.innerHTML = `
+    <span class="pill-eyebrow glass tracking"><span class="ping"></span>${esc(h.eyebrow)}</span>
+    <h1>${esc(h.titleA)} <span class="text-gradient">${esc(h.titleHighlight)}</span> ${esc(h.titleB)}</h1>
+    <p class="hero-sub">${esc(h.sub)}</p>
+    <div class="hero-ctas">
+      ${waA(t.wa.general, "btn btn-xl btn-neon", `${WA_ICON}${esc(h.cta)}`)}
+      <a class="btn btn-xl btn-glass" href="#services">${esc(h.secondary)}${ICON.arrowDown}</a>
+    </div>
+    <ul class="badges">${h.badges.map((b) => `<li>${ICON.check}${esc(b)}</li>`).join("")}</ul>`;
+  el.classList.remove("lang-swap"); void el.offsetWidth; el.classList.add("lang-swap");
+  document.getElementById("tag1").textContent = h.badges[0];
+  document.getElementById("tag2").textContent = h.badges[1];
+}
+
+function renderWhy(t) {
+  const icons = [ICON.userCheck, ICON.crosshair, ICON.lock, ICON.cap];
+  return `
+  <section id="why" class="block"><div class="container">
+    ${reveal(`<h2 class="h2 center" style="max-width:48rem">${esc(t.why.title)}</h2>`)}
+    <div class="why-grid">
+      ${t.why.items.map((it, i) => reveal(`
+        <div class="card glass why-card">
+          <div class="icon-box">${icons[i]}</div>
+          <h3>${esc(it.title)}</h3>
+          <p class="desc">${esc(it.desc)}</p>
+        </div>`, i * 90)).join("")}
+    </div>
+  </div></section>`;
+}
+
+function renderTrial(t) {
+  const tr = t.trial;
+  return `
+  <section id="trial" class="block"><div class="container">
+    ${reveal(`
+      <div class="trial-box glass-strong">
+        <div class="blob b1" aria-hidden="true"></div><div class="blob b2" aria-hidden="true"></div>
+        <div class="trial-grid">
+          <div class="trial-text">
+            <span class="chip tracking">${ICON.gift}${esc(tr.eyebrow)}</span>
+            <h2 class="h2">${esc(tr.title)}</h2>
+            <p class="sub">${esc(tr.sub)}</p>
+            <p class="note">${esc(tr.note)}</p>
+          </div>
+          <div class="trial-cards">
+            ${FREE_TRIALS.map((f, i) => reveal(`
+              <div class="card glass trial-card">
+                <div class="lbl">${ICON.audio}${esc(tr.audioLabel(f.audioMinutes))}</div>
+                <div class="big"><span class="num text-gradient">${f.freeTrials}</span><span class="free">${esc(tr.freeLabel)}</span></div>
+                ${waA(t.wa.trial(f.audioMinutes), "btn btn-md btn-glass w-full", `${WA_ICON}${esc(tr.cta)}`)}
+              </div>`, 150 + i * 120)).join("")}
+          </div>
+        </div>
+      </div>`)}
+  </div></section>`;
+}
+
+function serviceCard(t, key, icon, body) {
+  const item = t.services.items[key];
+  return `
+    <div class="card glass svc-card">
+      <div class="svc-top">
+        <div class="icon-box solid">${icon}</div>
+        ${waA(t.wa.service(item.title), "btn btn-sm btn-glass", esc(item.cta))}
+      </div>
+      <h3>${esc(item.title)}</h3>
+      <p class="desc">${esc(item.desc)}</p>
+      <div class="svc-bottom">${body}</div>
+    </div>`;
+}
+
+function renderServices(t, lang) {
+  const s = t.services;
+  const b = t.bundle;
+  const tiers = `<div class="tiers">${TRANSCRIPTION_TIERS.map((tier) => `
+      <div class="tier"><div class="d">${esc(s.duration(tier.minutes))}</div><div class="p">${esc(formatPrice(tier.price, lang))}</div></div>`).join("")}</div>`;
+  return `
+  <section id="services" class="block"><div class="container">
+    ${reveal(`<div class="services-head center">
+      <span class="eyebrow">${esc(s.eyebrow)}</span>
+      <h2 class="h2">${esc(s.title)}</h2>
+      <p>${esc(s.sub)}</p>
+    </div>`)}
+    <div class="svc-grid">
+      ${reveal(serviceCard(t, "transcription", ICON.audio, tiers), 0, "tall")}
+      ${reveal(serviceCard(t, "antiPlagiat", ICON.fileCheck, `
+        <div class="price text-gradient">${esc(range(PRICING.antiPlagiatPerPage.min, PRICING.antiPlagiatPerPage.max, t))} <span class="unit">${esc(s.perPage)}</span></div>
+        <p class="crit">${esc(s.criticalChapter)}</p>`), 100)}
+      ${reveal(serviceCard(t, "formatting", ICON.layout, `<div class="price text-gradient">${esc(range(PRICING.formatting.min, PRICING.formatting.max, t))}</div>`), 150)}
+      ${reveal(serviceCard(t, "presentation", ICON.presentation, `<div class="price text-gradient">${esc(range(PRICING.presentation.min, PRICING.presentation.max, t))}</div>`), 100, "wide")}
+    </div>
+    ${reveal(`
+      <div class="bundle">
+        <div class="bundle-inner glass-strong">
+          <div class="glow" aria-hidden="true"></div>
+          <div class="bundle-grid">
+            <div>
+              <span class="gold-badge tracking">${ICON.crown}${esc(b.badge)}</span>
+              <h3 dir="ltr"><span class="text-gold">Pack Étudiant Malin</span></h3>
+              <p class="tagline">${esc(b.tagline)}</p>
+              <p class="bdesc">${esc(b.desc)}</p>
+              <ul class="includes">${b.includes.map((inc) => `<li><span class="tick">${ICON.check}</span>${esc(inc)}</li>`).join("")}</ul>
+            </div>
+            <div class="bundle-price">
+              <span class="save">${ICON.sparkles}${esc(b.save(formatPrice(BUNDLE_MAX_SAVING, lang)))}</span>
+              <div class="amount text-gold">${esc(formatPrice(PRICING.bundle, lang))}</div>
+              ${waA(t.wa.bundle, "btn btn-xl btn-gold w-full", esc(b.cta))}
+            </div>
+          </div>
+        </div>
+      </div>`, 120, "bundle-wrap")}
+  </div></section>`;
+}
+
+function renderFooter(t) {
+  const f = t.footer;
+  const payIcons = { BaridiMob: ICON.phone, CCP: ICON.bank };
+  document.getElementById("footer").innerHTML = `
+  <footer id="contact"><div class="container">
+    ${reveal(`
+      <div class="cta-box">
+        <div class="wash" aria-hidden="true"></div><div class="line" aria-hidden="true"></div>
+        <h2>${esc(f.ctaTitle)}</h2>
+        <p>${esc(f.ctaSub)}</p>
+        ${waA(t.wa.general, "btn btn-xl btn-neon", `${WA_ICON}${esc(t.hero.cta)}`)}
+      </div>`)}
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand" dir="ltr">Soutenance <span class="text-gradient">DZ</span> 🎓</div>
+        <p class="small">${esc(f.tagline)}</p>
+      </div>
+      <div>
+        <h3 class="foot-title tracking">${esc(f.paymentTitle)}</h3>
+        <div class="pay-list">${PAYMENT_METHODS.map((m) => `<span class="pay glass">${payIcons[m]}${m}</span>`).join("")}</div>
+        <p class="pay-note">${ICON.ban}${esc(f.paymentNote)}</p>
+      </div>
+      <div>
+        <h3 class="foot-title tracking">${esc(f.supportTitle)}</h3>
+        ${waA(t.wa.general, "wa-link", `<span class="circle">${WA_ICON}</span><span class="num" dir="ltr">${WHATSAPP_DISPLAY}</span>`)}
+        <p class="small" style="margin-top:.5rem">${esc(f.supportDesc)}</p>
+      </div>
+    </div>
+    <p class="rights">© ${new Date().getFullYear()} Soutenance DZ. ${esc(f.rights)}</p>
+  </div></footer>`;
+}
+
+/* Scroll reveal */
+let revealObserver = null;
+function observeReveals() {
+  if (revealObserver) revealObserver.disconnect();
+  const els = document.querySelectorAll(".reveal:not(.visible)");
+  if (!("IntersectionObserver" in window)) { els.forEach((e) => e.classList.add("visible")); return; }
+  revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("visible"); revealObserver.unobserve(en.target); } });
+  }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+  els.forEach((e) => revealObserver.observe(e));
+}
+
+/* Pointer spotlight on cards */
+document.addEventListener("pointermove", (e) => {
+  const card = e.target.closest && e.target.closest(".card");
+  if (!card) return;
+  const r = card.getBoundingClientRect();
+  card.style.setProperty("--mx", `${e.clientX - r.left}px`);
+  card.style.setProperty("--my", `${e.clientY - r.top}px`);
+}, { passive: true });
+
+function setLang(lang, save) {
+  const t = DICT[lang];
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  document.querySelectorAll("#lang-switch button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+  document.getElementById("lang-pill").style.transform = `translateX(${LANGS.indexOf(lang) * 100}%)`;
+  renderNav(t);
+  renderHero(t);
+  document.getElementById("sections").innerHTML = renderWhy(t) + renderTrial(t) + renderServices(t, lang);
+  renderFooter(t);
+  const fab = document.getElementById("fab");
+  fab.href = whatsappLink(t.wa.general);
+  fab.setAttribute("aria-label", t.hero.cta);
+  fab.innerHTML = WA_ICON;
+  observeReveals();
+  if (save) { try { localStorage.setItem(STORAGE_KEY, lang); } catch (_) {} }
+}
+
+document.querySelectorAll("#lang-switch button").forEach((b) => b.addEventListener("click", () => setLang(b.dataset.lang, true)));
+
+/* Header glass intensifies on scroll */
+const header = document.getElementById("header");
+const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 24);
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
+
+let initial = DEFAULT_LANG;
+try { const saved = localStorage.getItem(STORAGE_KEY); if (LANGS.includes(saved)) initial = saved; } catch (_) {}
+setLang(initial, false);
+
+/* ===================== Energy orb: liquid particle sphere ===================== */
+(function energyOrb() {
+  const wrap = document.getElementById("orb");
+  const canvas = document.getElementById("orb-canvas");
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+  const css = getComputedStyle(document.documentElement);
+  const palette = [
+    css.getPropertyValue("--neon").trim() || "#a855f7",
+    css.getPropertyValue("--neon-blue").trim() || "#38bdf8",
+    css.getPropertyValue("--neon-pink").trim() || "#ec4899",
+  ];
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const small = window.innerWidth < 768;
+  const SPHERE = small ? 900 : 1600;
+  const RING = small ? 260 : 420;
+  const pts = [];
+  const golden = Math.PI * (3 - Math.sqrt(5));
+  for (let i = 0; i < SPHERE; i++) {
+    const y = 1 - (i / (SPHERE - 1)) * 2, r = Math.sqrt(1 - y * y), th = golden * i;
+    pts.push({ x: Math.cos(th) * r, y, z: Math.sin(th) * r, c: i % 7 === 0 ? 2 : y > 0 ? 0 : 1, s: Math.random(), ring: false, a: th });
+  }
+  for (let i = 0; i < RING; i++) {
+    const a = (i / RING) * Math.PI * 2, rad = 1.45 + (Math.random() - 0.5) * 0.12;
+    pts.push({ x: Math.cos(a) * rad, y: (Math.random() - 0.5) * 0.04, z: Math.sin(a) * rad, c: 1, s: Math.random(), ring: true, a });
+  }
+
+  let w = 0, h = 0, dpr = 1;
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const rect = wrap.getBoundingClientRect();
+    w = rect.width; h = rect.height;
+    canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+    canvas.style.width = w + "px"; canvas.style.height = h + "px";
+  }
+  resize();
+  new ResizeObserver(resize).observe(wrap);
+
+  const pointer = { x: 0, y: 0, tx: 0, ty: 0 };
+  window.addEventListener("pointermove", (e) => {
+    pointer.tx = (e.clientX / window.innerWidth - 0.5) * 2;
+    pointer.ty = (e.clientY / window.innerHeight - 0.5) * 2;
+  }, { passive: true });
+
+  let running = true, looping = true, raf = 0;
+  new IntersectionObserver(([e]) => {
+    running = !!(e && e.isIntersecting);
+    if (running && !looping && !reduceMotion) { looping = true; raf = requestAnimationFrame(frame); }
+  }).observe(wrap);
+
+  const start = performance.now();
+  const buckets = [[], [], []];
+  const proj = new Float32Array(pts.length * 3);
+
+  function frame(now) {
+    const t = (now - start) / 1000;
+    pointer.x += (pointer.tx - pointer.x) * 0.04;
+    pointer.y += (pointer.ty - pointer.y) * 0.04;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    ctx.globalCompositeOperation = "lighter";
+    const R = Math.min(w, h) * 0.3, cx = w / 2, cy = h / 2;
+    const rotY = t * 0.22 + pointer.x * 0.6, rotX = -0.35 + pointer.y * 0.4;
+    const cyR = Math.cos(rotY), syR = Math.sin(rotY), cxR = Math.cos(rotX), sxR = Math.sin(rotX);
+    const ct = Math.cos(0.42), st = Math.sin(0.42);
+    buckets.forEach((b) => (b.length = 0));
+    for (let i = 0; i < pts.length; i++) {
+      const p = pts[i];
+      let x = p.x, y = p.y, z = p.z;
+      if (p.ring) {
+        const a = p.a + t * 0.35, rad = Math.hypot(p.x, p.z);
+        x = Math.cos(a) * rad; z = Math.sin(a) * rad;
+        const y2 = y * ct - z * st; z = y * st + z * ct; y = y2;
+      } else {
+        const wave = 1 + 0.07 * Math.sin(3 * p.y + t * 1.6) * Math.cos(2.5 * p.a + t * 0.9) + 0.04 * Math.sin(5 * p.x + t * 2.2);
+        x *= wave; y *= wave; z *= wave;
+      }
+      const x1 = x * cyR - z * syR, z1 = x * syR + z * cyR;
+      const y1 = y * cxR - z1 * sxR, z2 = y * sxR + z1 * cxR;
+      const persp = 2.6 / (2.6 + z2);
+      proj[i * 3] = cx + x1 * R * persp;
+      proj[i * 3 + 1] = cy + y1 * R * persp;
+      proj[i * 3 + 2] = z2;
+      buckets[p.c].push(i);
+    }
+    buckets.forEach((list, b) => {
+      ctx.fillStyle = palette[b];
+      for (const i of list) {
+        const pt = pts[i], z = proj[i * 3 + 2], depth = (1 - z) / 2;
+        const twinkle = 0.6 + 0.4 * Math.sin(t * 2 + pt.s * 20);
+        ctx.globalAlpha = (0.15 + depth * 0.75) * twinkle;
+        const size = (pt.ring ? 1.1 : 0.7 + depth * 1.6) * (small ? 0.9 : 1);
+        ctx.beginPath(); ctx.arc(proj[i * 3], proj[i * 3 + 1], size, 0, Math.PI * 2); ctx.fill();
+      }
+    });
+    ctx.globalAlpha = 1;
+    if (running && !reduceMotion) raf = requestAnimationFrame(frame); else looping = false;
+  }
+  raf = requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
